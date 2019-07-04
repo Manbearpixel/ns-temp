@@ -1,0 +1,117 @@
+@import "~/app-variables.scss";
+@import "../carousel-grid.scss";
+
+@keyframes odinPhoneAppears {
+  0% {
+    transform: translate3d(5, 55, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(5, 35, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes odinAssetsAppearsQuick {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.96);
+    opacity: 1;
+  }
+}
+
+@keyframes odinAssetsAppearsSmooth {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.3);
+    opacity: 0;
+  }
+  40% {
+    transform: translate3d(0, 0, 0) scale(0.99);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.96);
+    opacity: 1;
+  }
+}
+
+.odin-phone-assets {
+  .phone {
+    height: 170;
+    margin-top: 40;
+    
+    opacity: 0;
+    transform: translate3d(5, 75, 0);
+
+    animation-name: odinPhoneAppears;
+    animation-direction: reverse;
+    animation-duration: 200ms;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-fill-mode: forwards;
+  }
+
+  .assets {
+    width: 250;
+
+    transform: translate3d(0, 0, 0) scale(0.3);
+    opacity: 0;
+
+    animation-name: odinAssetsAppearsQuick;
+    animation-direction: reverse;
+    animation-duration: 200ms;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-fill-mode: forwards;
+  }
+}
+
+.active {
+  .odin-phone-assets {
+    .phone {
+      animation-name: odinPhoneAppears;
+      animation-delay: 500ms;
+      animation-duration: 1s;
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation-fill-mode: forwards;
+    }
+
+    .assets {
+      animation-name: odinAssetsAppearsSmooth;
+      animation-delay: 1100ms;
+      animation-duration: 900ms;
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.android320 :host,
+.android360 :host,
+.android400 :host {
+  .odin-phone-assets {
+    .phone {
+      height: 80;
+      margin-top: 0;
+    }
+
+    .assets {
+      height: 110;
+    }
+  }
+}
+
+.android360 :host {
+  .odin-phone-assets {
+
+    .phone {
+      height: 120;
+      margin-top: 20;
+    }
+
+    .assets {
+      height: 150;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+@import "~/app-variables.scss";
+@import "../carousel-grid.scss";
+
+.swipe-wrap {
+  .phone {
+    height: 160;
+    transform: translate3d(0, 35, 0);
+  }
+
+  .hand {
+    height: 120;
+    transform: translate3d(30, 85, 0);
+  }
+}
+
+.android320 :host,
+.android360 :host,
+.android400 :host {
+  .swipe-wrap {
+    .phone {
+      height: 90;
+      transform: translate3d(0, 15, 0);
+    }
+
+    .hand {
+      height: 70;
+      transform: translate3d(15, 45, 0);
+    }
+  }
+}
+
+.android360 :host {
+  .swipe-wrap {
+    .phone {
+      height: 120;
+      transform: translate3d(0, 25, 0);
+    }
+
+    .hand {
+      height: 100;
+      transform: translate3d(30, 65, 0);
+    }
+  }
+}
+
+.welcome {
+  background-color: $odin-dark;
+
+  .header {
+    background-color: $odin-green;
+    height: 200;
+
+    GridLayout {
+      height: 160;
+    }
+  }
+
+  .screen {
+    border-radius: 0;
+    background-color: $odin-dark;
+    margin-bottom: 20;
+
+    .container {
+      width: 80%;
+    }
+
+    .body {
+      color: #cccccc;
+      font-size: 16;
+    }
+
+    .card {
+      background-color: transparent;
+      border-bottom-width: 0;
+      padding: 0;
+  
+      .card-content {
+        padding: 0;
+      }
+    }
+  }
+
+  .friend {
+    width: 140;
+
+    &.one {
+      transform: translate3d(30, -15, 0) scale(0.9);
+      opacity: 0.8;
+    }
+
+    &.two {
+      transform: translate3d(0, 15, 0);
+      opacity: 1;
+    }
+
+    &.three {
+      transform: translate3d(-30, -15, 0) scale(0.9);
+      opacity: 0.8;
+    }
+  }
+}
+
+.progress {
+  height: 30;
+  width: 80%;
+  margin-top: 10;
+  background-color: transparent;
+  // background-color: orange;
+
+  StackLayout {
+    padding-top: 5;
+  }
+
+  .shadow,
+  .overlay {
+    border-radius: 50%;
+    height: 20;
+  }
+
+  .shadow {
+    background-color: $odin-beige;
+  }
+
+  .overlay {
+    background-color: $odin-blue-light;
+    width: 20%;
+    transition: width ease-in-out;
+  }
+
+  .complete {
+    width: 20;
+  }
+}
+
+.policies {
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  Label {
+    color: $odin-dark;
+  }
+}
